@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail - My E-Shop</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, .breadcrumb, .product-container, footer { padding: 20px; }
+    .breadcrumb a { margin-right: 5px; color: #0066c0; text-decoration: none; }
+    .product-container { display: flex; gap: 20px; }
+    .product-images { flex: 1; }
+    .product-images img { width: 100%; max-width: 400px; }
+    .product-info { flex: 1; display: flex; flex-direction: column; }
+    .price { color: #b12704; font-size: 1.5em; margin: 0.5em 0; }
+    .rating { margin-bottom: 1em; }
+    .btn { background: #ffa41c; border: none; padding: 15px; font-size: 1em; cursor: pointer; margin-bottom: 0.5em; }
+    .btn:hover { background: #cc8400; }
+    .selectors { margin: 1em 0; }
+    .tabs { margin-top: 2em; }
+    .tabs div { margin-bottom: 1em; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#">Home</a> › <a href="#">Category</a> › <span>Product Name</span>
+    </nav>
+  </header>
+
+  <div class="product-container">
+    <!-- Image Gallery -->
+    <div class="product-images">
+      <img src="https://via.placeholder.com/400" alt="Product Image">
+      <!-- Thumbnails / alternate views could go here -->
+    </div>
+
+    <!-- Product Details -->
+    <div class="product-info">
+      <h1>Product Name</h1>
+      <p class="price">₹1,299 <span style="font-size: smaller; color: #565959;">(20% off)</span></p>
+      <div class="rating">⭐⭐⭐⭐☆ (123 reviews)</div>
+      <div class="selectors">
+        <label>Color: <select><option>Black</option><option>White</option></select></label><br>
+        <label>Quantity: <input type="number" value="1" min="1"></label>
+      </div>
+      <button class="btn">Add to Cart</button>
+      <button class="btn">Buy Now</button>
+
+      <div class="tabs">
+        <div><strong>Description:</strong><br>Short compelling product summary here.</div>
+        <div><strong>Details & Specs:</strong><br>Key technical specs listed.</div>
+        <div><strong>Delivery Info:</strong><br>Free delivery within 3–5 days.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My E-Shop</p>
+  </footer>
+
+</body>
+</html>
