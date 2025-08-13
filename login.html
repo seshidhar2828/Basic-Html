@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - My Santha</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background: #222;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 400px;
+      background: white;
+      padding: 20px;
+      margin: 40px auto;
+      border-radius: 8px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .remember {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .btn {
+      background: #ffa41c;
+      border: none;
+      padding: 12px;
+      font-size: 1em;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 15px;
+      border-radius: 6px;
+    }
+    .btn:hover {
+      background: #cc8400;
+    }
+    .links {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .links a {
+      color: #0066c0;
+      text-decoration: none;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Login to My Santha</h1>
+  </header>
+
+  <div class="container">
+    <h2>Sign In</h2>
+    <form id="loginForm">
+      <label>Email or Username</label>
+      <input type="text" id="username" placeholder="Enter your email or username">
+
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Enter your password">
+
+      <div class="remember">
+        <input type="checkbox" id="remember">
+        <label for="remember" style="margin-left:5px;">Remember Me</label>
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <div class="links">
+      <p><a href="#">Forgot Password?</a> | <a href="#">Create Account</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My E-Shop</p>
+  </footer>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (username === "" || password === "") {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Example check (replace with backend authentication)
+      if (username === "test" && password === "1234") {
+        alert("Login successful!");
+        window.location.href = "product.html"; // Redirect to your product page
+      } else {
+        alert("Invalid credentials. Try again.");
+      }
+    });
+  </script>
+
+</body>
+</html>
