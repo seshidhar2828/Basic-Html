@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - My Santha</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+    }
+    header, footer {
+      background: #222;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 { color: #333; }
+    .order-summary {
+      background: #fafafa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .order-summary p {
+      margin: 5px 0;
+    }
+    .payment-method {
+      margin-bottom: 15px;
+    }
+    .payment-method label {
+      display: block;
+      margin: 8px 0;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .btn {
+      background: #ffa41c;
+      border: none;
+      padding: 15px;
+      font-size: 1em;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+    .btn:hover {
+      background: #cc8400;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Payment Page</h1>
+  </header>
+
+  <div class="container">
+    <h2>Order Summary</h2>
+    <div class="order-summary">
+      <p><strong>Product:</strong> Product Name</p>
+      <p><strong>Price:</strong> ₹1,299</p>
+      <p><strong>Quantity:</strong> 1</p>
+      <p><strong>Total:</strong> ₹1,299</p>
+    </div>
+
+    <h2>Payment Method</h2>
+    <div class="payment-method">
+      <label><input type="radio" name="pay" value="card" checked> Credit/Debit Card</label>
+      <div id="card-details">
+        <input type="text" placeholder="Card Number">
+        <input type="text" placeholder="Name on Card">
+        <input type="month" placeholder="Expiry Date">
+        <input type="password" placeholder="CVV">
+      </div>
+
+      <label><input type="radio" name="pay" value="upi"> UPI</label>
+      <div id="upi-details" style="display:none;">
+        <input type="text" placeholder="Enter UPI ID">
+      </div>
+
+      <label><input type="radio" name="pay" value="cod"> Cash on Delivery</label>
+    </div>
+
+    <button class="btn" onclick="alert('Payment Successful!')">Proceed to Pay</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My E-Shop</p>
+  </footer>
+
+  <script>
+    const payMethods = document.getElementsByName('pay');
+    const cardDetails = document.getElementById('card-details');
+    const upiDetails = document.getElementById('upi-details');
+
+    payMethods.forEach(method => {
+      method.addEventListener('change', () => {
+        if (method.value === 'card') {
+          cardDetails.style.display = 'block';
+          upiDetails.style.display = 'none';
+        } else if (method.value === 'upi') {
+          cardDetails.style.display = 'none';
+          upiDetails.style.display = 'block';
+        } else {
+          cardDetails.style.display = 'none';
+          upiDetails.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
